@@ -1,23 +1,24 @@
 //import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-const pokemon_number = 10;
 
 
 function App() {
 
   const [list, setList] = useState([]);
-  //const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  const pokemon_number = 20;
+  const init_pokemon = 11;
+ // const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
 
   // Read the pokemo information
   const fetchPokemons = async () => {
     const gottaFetchAll = [];
-
-    for (let i = 1; i <= pokemon_number; i++) {
+    
+    for (let i = init_pokemon; i <= pokemon_number; i++) {
       gottaFetchAll.push(await getPokemon(i))
     }
     await setList(gottaFetchAll);
-  }
+  }  
 
   const getPokemon = async (id) => {
     const url = 'https://pokeapi.co/api/v2/pokemon/' + id.toString();
@@ -31,8 +32,8 @@ function App() {
 
 //Create the structure for the cards
   const createPokemonCard = (pokemon) => {
-    const { name, sprites, id } = pokemon
-    //const type = types[0].type.name
+    const { name, types, sprites, id } = pokemon
+    const type = types[0].type.name
 
     return (
       <div className="card">
@@ -43,7 +44,8 @@ function App() {
           <img src={sprites.front_default} alt="pokemon" width={'50%'} ></img>
         </div>
         <div className="card-footer">
-          <p className="card-text text-capitalize">{name}</p>
+          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize'}}>{name}</p>
+          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize'}}>{type}</p>
         </div>
       </div>
     )
@@ -51,13 +53,11 @@ function App() {
 
   function onSubmmitNext() {
     const num = pokemon_number + 10;
-    pokemon_number = num;
     setList(num);
   }
 
   const onSubmmitAnt = () => {
     const num = pokemon_number - 10;
-    pokemon_number = num;
     setList(num);
   }
 
@@ -65,7 +65,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Pokémon</h1>
-        <div id="cards" className="cards" key={1}>
+        <div id="cards" className="cards">
           {
             list.map(pokemon => createPokemonCard(pokemon)
             )}
