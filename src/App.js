@@ -31,7 +31,7 @@ function App() {
 
 //Create the structure for the cards
   const createPokemonCard = (pokemon) => {
-    const { name, types, sprites, id } = pokemon
+    const { name, sprites, id } = pokemon
     //const type = types[0].type.name
 
     return (
@@ -65,7 +65,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Pokémon</h1>
-        <div id="cards" className="cards">
+        <div id="cards" className="cards" key={1}>
           {
             list.map(pokemon => createPokemonCard(pokemon)
             )}
