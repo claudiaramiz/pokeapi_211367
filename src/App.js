@@ -19,7 +19,7 @@ function App() {
     for (let i = countinit; i <= countfinal; i++) {
       gottaFetchAll.push(await getPokemon(i))
     }
-    await setList(gottaFetchAll);
+    setList(gottaFetchAll);
   }
 
   const getPokemon = async (id) => {
@@ -54,14 +54,14 @@ function App() {
   }
 
   function onSubmmitNext() {
-    setCountfinal(countfinal + 10);
     setCountinit(countinit + 10);
+    setCountfinal(countfinal + 10);
     fetchPokemons();
   }
 
   const onSubmmitAnt = () => {
-    setCountfinal(countfinal - 10);
     setCountinit(countinit - 10);
+    setCountfinal(countfinal - 10);
     fetchPokemons();
   }
 
