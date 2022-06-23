@@ -28,9 +28,9 @@ function App() {
     return (await res.json())
   }
 
-  useEffect(() => {
+  useEffect(()=> {
     fetchPokemons()
-  }, [])
+  })
 
   //Create the structure for the cards
   const createPokemonCard = (pokemon) => {
