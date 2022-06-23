@@ -6,19 +6,21 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [list, setList] = useState([]);
-  const pokemon_number = 20;
-  const init_pokemon = 11;
- // const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  //const pokemon_number = 10;
+  //const init_pokemon = 1;
+  //const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  const [countinit, setCountinit] = useState(1);
+  const [countfinal, setCountfinal] = useState(10);
 
   // Read the pokemo information
   const fetchPokemons = async () => {
     const gottaFetchAll = [];
-    
-    for (let i = init_pokemon; i <= pokemon_number; i++) {
+
+    for (let i = countinit; i <= countfinal; i++) {
       gottaFetchAll.push(await getPokemon(i))
     }
     await setList(gottaFetchAll);
-  }  
+  }
 
   const getPokemon = async (id) => {
     const url = 'https://pokeapi.co/api/v2/pokemon/' + id.toString();
@@ -30,7 +32,7 @@ function App() {
     fetchPokemons()
   }, [])
 
-//Create the structure for the cards
+  //Create the structure for the cards
   const createPokemonCard = (pokemon) => {
     const { name, types, sprites, id } = pokemon
     const type = types[0].type.name
@@ -44,21 +46,23 @@ function App() {
           <img src={sprites.front_default} alt="pokemon" width={'50%'} ></img>
         </div>
         <div className="card-footer">
-          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize'}}>{name}</p>
-          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize'}}>{type}</p>
+          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize' }}>{name}</p>
+          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize' }}>{type}</p>
         </div>
       </div>
     )
   }
 
   function onSubmmitNext() {
-    const num = pokemon_number + 10;
-    setList(num);
+    setCountfinal(countfinal + 10);
+    setCountinit(countinit + 10);
+    fetchPokemons();
   }
 
   const onSubmmitAnt = () => {
-    const num = pokemon_number - 10;
-    setList(num);
+    setCountfinal(countfinal - 10);
+    setCountinit(countinit - 10);
+    fetchPokemons();
   }
 
   return (
@@ -72,7 +76,7 @@ function App() {
         </div>
         <div><br></br></div>
         <div className='container m-auto'>
-          <button onClick={() => onSubmmitAnt} className='m-2 btn btn-dark'>Anterior</button>
+          <button onClick={onSubmmitAnt} className='m-2 btn btn-dark'>Anterior</button>
           <button onClick={onSubmmitNext} className='m-2 btn btn-dark'>Siguiente</button>
         </div>
         <div><br></br></div>
