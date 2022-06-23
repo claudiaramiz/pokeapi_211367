@@ -9,6 +9,7 @@ function App() {
   const [list, setList] = useState([]);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
 
+  // Read the pokemo information
   const fetchPokemons = async () => {
     const gottaFetchAll = [];
 
@@ -48,7 +49,7 @@ function App() {
     )
   }
 
-  function onSubmmitNext () {
+  function onSubmmitNext() {
     const num = pokemon_number + 10;
     pokemon_number = num;
     setList(num);
@@ -71,8 +72,8 @@ function App() {
         </div>
         <div><br></br></div>
         <div className='container m-auto'>
-        <button onClick={()=> onSubmmitAnt} className='m-2 btn btn-dark'>Anterior</button>
-        <button onClick={onSubmmitNext} className='m-2 btn btn-dark'>Siguiente</button>
+          <button onClick={() => onSubmmitAnt} className='m-2 btn btn-dark'>Anterior</button>
+          <button onClick={onSubmmitNext} className='m-2 btn btn-dark'>Siguiente</button>
         </div>
         <div><br></br></div>
       </header>
