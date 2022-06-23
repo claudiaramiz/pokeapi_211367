@@ -29,7 +29,7 @@ function App() {
     fetchPokemons()
   }, [])
 
-
+//Create the structure for the cards
   const createPokemonCard = (pokemon) => {
     const { name, types, sprites, id } = pokemon
     const type = types[0].type.name
