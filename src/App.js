@@ -43,10 +43,10 @@ function App() {
           <h5 className="card-title">{id}</h5>
         </div>
         <div className="card-body">
-          <img src={sprites.front_default} alt="pokemon" width={'50%'} ></img>
+          <img src={sprites.front_default} alt="pokemon" ></img>
         </div>
         <div className="card-footer">
-          <p className="card-text text-capitalize" style={{ textTransform: 'capitalize' }}>{name}</p>
+          <p className="card-text-name text-capitalize" style={{ textTransform: 'capitalize' }}>{name}</p>
           <p className="card-text text-capitalize" style={{ textTransform: 'capitalize' }}>{type}</p>
         </div>
       </div>

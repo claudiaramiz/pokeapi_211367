@@ -3,7 +3,7 @@
 }
 
 .card {
-  box-shadow: 1px 1px 5px gray;
+  box-shadow: 1px 1px 5px wheat;
   margin: 5px;
   width: 30%;
 }
@@ -20,6 +20,37 @@
 .cards-item {
   display: flex;
   padding: 1rem;
+}
+
+.card-title {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  background: goldenrod;
+  border-radius: 50%;
+}
+
+.card-text{
+  text-align: center;
+  text-transform: capitalize;
+  grid-area: title;
+  font-weight: 700;
+}
+
+.card-text-name {
+  text-align: center;
+  text-transform: capitalize;
+  grid-area: title;
+  font-weight: 700;
+  background: white;
+  color: goldenrod;
+}
+
+.card-body{
+  width: 100%;
+  transform: scale(1.2);
+  align-self: center;
+  grid-area: img;
 }
 
 button {
