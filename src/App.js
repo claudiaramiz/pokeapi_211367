@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 const pokemon_number = 10;
@@ -7,7 +7,7 @@ const pokemon_number = 10;
 function App() {
 
   const [list, setList] = useState([]);
-  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  //const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
 
   // Read the pokemo information
   const fetchPokemons = async () => {
@@ -32,7 +32,7 @@ function App() {
 //Create the structure for the cards
   const createPokemonCard = (pokemon) => {
     const { name, types, sprites, id } = pokemon
-    const type = types[0].type.name
+    //const type = types[0].type.name
 
     return (
       <div className="card">
