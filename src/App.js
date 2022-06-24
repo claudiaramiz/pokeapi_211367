@@ -70,6 +70,7 @@ function App() {
     <div className="App">
       <div>
       <Link to="Home">Home</Link>
+      <Link to="Pokemon">Pokemon</Link>
       </div>
       <header className="App-header">
         <h1>Pokémon</h1>
