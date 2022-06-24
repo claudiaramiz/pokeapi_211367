@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
+import {Link} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
@@ -67,6 +68,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+      <Link to="Home">Home</Link>
+      </div>
       <header className="App-header">
         <h1>Pokémon</h1>
         <div id="cards" className="cards">
