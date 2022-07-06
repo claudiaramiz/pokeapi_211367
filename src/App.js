@@ -1,8 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
-import {Link} from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
 
 function App() {
 
@@ -29,7 +28,7 @@ function App() {
     return (await res.json())
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     fetchPokemons()
   })
 
@@ -67,10 +66,10 @@ function App() {
   }
 
   return (
+
     <div className="App">
       <div>
-      <Link to="Home">Home</Link>
-      <Link to="Pokemon">Pokemon</Link>
+
       </div>
       <header className="App-header">
         <h1>Pokémon</h1>
@@ -87,6 +86,8 @@ function App() {
         <div><br></br></div>
       </header>
     </div>
+
+
   );
 }
 
