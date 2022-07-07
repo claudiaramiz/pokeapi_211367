@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Character = ({ data }) => {
+const Character = ({ data }) => {
     return (
         <div>
             {
@@ -11,4 +11,4 @@ export const Character = ({ data }) => {
     );
 }
 
-//export default Character;
+export default Character;

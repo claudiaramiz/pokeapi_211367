@@ -9,7 +9,6 @@ export const ListComponent = () => {
 
     useEffect(() => {
         setItems(context.data);
-        context.query();
     }, [context.data]);
 
     return (

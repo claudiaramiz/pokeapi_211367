@@ -26,8 +26,10 @@ import Form from './Form';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Form/>
-        <App />
+        <>
+            <Form />
+            <App />
+        </>
     </React.StrictMode>,
     document.getElementById('root')
 );
