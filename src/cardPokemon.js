@@ -13,7 +13,7 @@ export const cardPokemon=({url})=>{
             ?
             <h2>Cargando</h2>
             :
-            <div className="card" style={'width: 12rem'}>
+            <div className="card" style={'width: 10rem'}>
                  <div className="card-header">
                  <h5 className="card-title">{data.id}</h5>
                  </div>
