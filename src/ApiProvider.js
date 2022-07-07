@@ -21,7 +21,7 @@ export const ApiProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        query()
+        query();
     })
 
     const handleSubmit = ({ e, searchTerm }) => {
@@ -30,13 +30,11 @@ export const ApiProvider = ({ children }) => {
         e.target.reset();
     }
 
-    const fetchData = async () => {
+    return (
+        <ApiContext.Provider value={{ status, data, handleSubmit }}>
+            {children}
+        </ApiContext.Provider>
+    )
 
-        return (
-            <ApiContext.Provider value={{ status, data, handleSubmit }}>
-                {children}
-            </ApiContext.Provider>
-        )
-    }
 
 }
