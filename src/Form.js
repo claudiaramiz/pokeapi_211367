@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = ({ handleSubmit }) => {
+export const Form = ({ handleSubmit }) => {
 
     const [searchTerm, setTerm] = useState('');
 
@@ -19,5 +19,3 @@ const Form = ({ handleSubmit }) => {
         </form>
     );
 }
-
-export default Form;
