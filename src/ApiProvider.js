@@ -20,22 +20,9 @@ export const ApiProvider = ({ children }) => {
         }
     }
 
-    // Read the pokemon information
-    const fetchPokemons = async () => {
-        const gottaFetchAll = [];
-        gottaFetchAll.push(await getPokemon(25))
-        setData(gottaFetchAll);
-    }
-
-    const getPokemon = async (id) => {
-        const url = 'https://pokeapi.co/api/v2/pokemon/' + id.toString();
-        const res = await fetch(url)
-        return (await res.json())
-    }
-
     useEffect(() => {
-        fetchPokemons()
-    }, [])
+        query()
+    })
 
     const handleSubmit = ({ e, searchTerm }) => {
         console.log(searchTerm);
@@ -43,12 +30,13 @@ export const ApiProvider = ({ children }) => {
         e.target.reset();
     }
 
-    const fetchData = async () => { }
+    const fetchData = async () => {
 
-    return (
-        <ApiContext.Provider value={{ status, data, handleSubmit }}>
-            {children}
-        </ApiContext.Provider>
-    )
+        return (
+            <ApiContext.Provider value={{ status, data, handleSubmit }}>
+                {children}
+            </ApiContext.Provider>
+        )
+    }
 
 }
