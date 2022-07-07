@@ -28,6 +28,7 @@ ReactDOM.render(
     <React.StrictMode>
         <>
             <Form />
+            <br /><br /><br />
             <App />
         </>
     </React.StrictMode>,

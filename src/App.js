@@ -65,7 +65,7 @@ function App() {
     const type = types[0].type.name
 
     return (
-      <div className="card">
+      <div className="card" key={id}>
         <div className="card-header">
           <h5 className="card-title">{id}</h5>
         </div>
