@@ -6,6 +6,7 @@ const Form = () => {
     const [searchTerm, setTerm] = useState('');
     const context = useContext(ApiContext);
 
+    // eslint-disable-next-line
     const updateSearchTerm = e => {
         setTerm(e.target.value);
     }
